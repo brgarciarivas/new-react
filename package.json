@@ -2,7 +2,6 @@
   "name": "new-react",
   "version": "1.0.0",
   "description": "React CLI used for automating repetitive task such as creating components etc",
-  "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rimraf lib",
@@ -19,8 +18,9 @@
     "url": "https://github.com/brgarciarivas/new-react/issues"
   },
   "homepage": "https://github.com/brgarciarivas/new-react#readme",
+  "preferGlobal": true,
   "bin": {
-    "react-create": "lib/index.js"
+    "new-react": "lib/index.js"
   },
   "devDependencies": {
     "babel-cli": "^6.6.5",

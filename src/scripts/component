@@ -1,0 +1,47 @@
+import fs from 'fs';
+import { exec } from 'child_process';
+
+import { baseTemplate } from '../templates/baseTemplate'
+import { compType } from '../constants';
+
+const
+  args = process.argv.slice(2),
+  name = args[1],
+  extensions = ['.jsx'];
+
+  let subDir = './src/components';
+
+
+
+//To create file need
+// Location of where to creat it 
+// CLI command 
+// Name of file
+// imports
+// template
+//
+
+function writeToFile(subDir, component, ext, compTmpl) {
+  fs.writeFile(subDir + component + ext, compTmpl, (err) => {
+    if (err) { throw err };
+  })
+}
+
+function createFiles(extensions, compType, subDir, name, baseTemplate) {
+  console.log(extensions)
+  console.log(compType)
+  console.log(subDir)
+  console.log(name)
+  console.log(baseTemplate)
+  console.log(cb)
+  extensions.forEach((ext) => {
+    exec(compType + subDir + name + ext, (err, stdout) => {
+      if (err) { throw err };
+      if (ext === '.js' || ext === '.jsx') {
+
+        // Writing up markup to component (.js or jsx) file
+        writeToFile(subDir, name, ext, baseTemplate);
+      }
+    });
+  })
+}

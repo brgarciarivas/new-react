@@ -1,0 +1,23 @@
+import { Base, React } from '../constants/imports'
+
+let baseTemplate = ``;
+
+const 
+	args = process.argv.slice(2),
+	name = args[1];
+	body =`
+		export default class ${name} extends Base {
+	    	render() {
+	        	return (
+		            <div className='${name} '>
+		                
+		            </div>
+	        	);
+	    	}
+		} 
+	`;
+
+template = Base + React + body;
+
+console.log(template)
+export default baseTemplate
